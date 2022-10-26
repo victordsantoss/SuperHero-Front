@@ -29,7 +29,8 @@ Esse projeto consiste no consumo da [SuperHero Api ](https://akabab.github.io/su
     <h2>Mobile - Favorites</h2>
     <img src="./src/assets/screenshots/mobile-favorites.png" width="400px">
     <h2>Navegação Mobile</h2>
-    <iframe src="./src/assets/screenshots/mobile-navigation.mp4" width="700px">
+    <video src="https://user-images.githubusercontent.com/52058094/197916595-cc8e7588-518a-4619-b38f-dd6ab7f49244.mov" controls="controls" style="maxwidth: 730px;">
+
 </div>
 
 
