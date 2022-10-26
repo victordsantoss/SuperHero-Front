@@ -1,0 +1,23 @@
+.container-not-favorites {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-not-favorites h1 {
+    font-size: 2rem;
+}
+
+.card-list {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row h1 {
+    font-size: 1.4rem;
+}
