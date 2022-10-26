@@ -131,8 +131,8 @@ const Card = ({ appearance, biography, connections, id, name, images, powerstats
                             })
                         }
                         <div className='buttons-super-hero'>
-                            <BiTrashAlt color={deleted ? "red" : "#fff"} size={25} onClick={() => handleDeletingFavorite()} />
-                            {!window.location.href.includes("favorites") && <MdOutlineFavoriteBorder color={favorite ? "red" : "#fff"} size={25} onClick={() => handleAddingFavorite(name)} />} 
+                            {window.location.href.includes("favorites") && <BiTrashAlt color={deleted ? "red" : "#fff"} size={25} onClick={() => handleDeletingFavorite()} />}
+                            {!window.location.href.includes("favorites") && <MdOutlineFavoriteBorder color={favorite ? "red" : "#fff"} size={25} onClick={() => handleAddingFavorite(name)} />}
                             {window.location.href.includes("favorites") && <AiFillEdit size={25} onClick={() => setEdit(true)} />}
                         </div>
                     </div>
