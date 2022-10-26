@@ -30,7 +30,7 @@
     overflow: hidden;
 }
 
-.full-card {
+.card-container .card-data .full-card {
     display: block;
     background-color: #303347;
     padding: 5px 5px;
@@ -38,9 +38,9 @@
     position: relative;
     z-index: 2;
     font-size: 18px;
-    width: 300px;
+    width: 400px;
     min-width: 250px;
-    height: 900px;
+    height: 480px;
     min-height: 330px;
     animation: typing 2s steps(22), blink .5s step-end infinite alternate;
     white-space: nowrap;

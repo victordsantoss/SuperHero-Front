@@ -87,7 +87,7 @@ const Card = ({ appearance, biography, connections, id, name, images, powerstats
     return (
         <div className="card-container">
             <div className='card-data'>
-                <section>
+                <section className={!window.location.href.includes("favorites") && window.screen.width > 700 ? "full-card" : null}>
                     <div className="image-container-super-hero">
                         <img src={images.md} alt="Super Hero" className='image-super-hero' />
                     </div>
@@ -132,7 +132,7 @@ const Card = ({ appearance, biography, connections, id, name, images, powerstats
                         }
                         <div className='buttons-super-hero'>
                             <BiTrashAlt color={deleted ? "red" : "#fff"} size={25} onClick={() => handleDeletingFavorite()} />
-                            <MdOutlineFavoriteBorder color={favorite ? "red" : "#fff"} size={25} onClick={() => handleAddingFavorite(name)} />
+                            {!window.location.href.includes("favorites") && <MdOutlineFavoriteBorder color={favorite ? "red" : "#fff"} size={25} onClick={() => handleAddingFavorite(name)} />} 
                             {window.location.href.includes("favorites") && <AiFillEdit size={25} onClick={() => setEdit(true)} />}
                         </div>
                     </div>
