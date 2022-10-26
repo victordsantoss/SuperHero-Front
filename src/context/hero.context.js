@@ -8,8 +8,9 @@ export function HeroContextProvider({ children }) {
     const [currentHero, setCurrentHero] = useState();
     const [favorites, setFavorites] = useState([]);
 
+
     return (
-        <HeroContext.Provider value={{ currentHero, setCurrentHero }}>
+        <HeroContext.Provider value={{ currentHero, setCurrentHero, setFavorites, favorites }}>
             {children}
         </HeroContext.Provider>
     )
