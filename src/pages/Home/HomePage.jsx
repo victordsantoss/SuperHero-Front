@@ -1,18 +1,20 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { TbListDetails } from "react-icons/tb";
 import { AiOutlineCaretDown, AiOutlineCaretUp } from 'react-icons/ai';
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
 import { HeroContext } from '../../context/hero.context';
 import { GetAll, GetHeroById } from '../../services/heroes.service';
+import DetailsModal from '../../components/DetailsModal/DetailsModal';
 
 import "./index.css";
 
 const Home = () => {
 
     const [heroes, setHeroes] = useState([]);
-    const { setCurrentHero } = useContext(HeroContext);
+    const { setCurrentHero, currentHero } = useContext(HeroContext);
     const [sortHeroes, setSortHeroes] = useState({ id: false, powerStats: false });
     const [searchParams, setSearchParams] = useState("");
+    const [openModal, setOpenModal] = useState(false);
     let navigate = useNavigate();
     let displayHeroes;
 
@@ -79,9 +81,8 @@ const Home = () => {
     }
 
     const handleDetails = (hero) => {
-        console.log(hero)
         setCurrentHero(hero);
-        navigate(`/details?hero=${hero.name}`)
+        setOpenModal(true);
     }
 
 
@@ -90,7 +91,7 @@ const Home = () => {
             <div className="main-home">
                 <div className="header-home">
                     <div className="row center horizontal-padding">
-                        <div className="col-6 search-area">
+                        <div className="col-md-6  search-area">
                             <span className="search-number">
                                 {handleTotalValues()}
                             </span>
@@ -98,16 +99,16 @@ const Home = () => {
                                 results
                             </span>
                         </div>
-                        <div className="col-6 center">
+                        <div className="col-md-6  ">
                             <input type="text" className="search-input" placeholder="Search ..." onChange={(event) => setSearchParams(event.target.value)} value={searchParams} />
                         </div>
                         {console.log(searchParams)}
                     </div>
                 </div>
 
-                <div className="body-home">
+                <div className={window.screen.width < 800 ? "body-home scroll-intern mt-2" : "body-home"}>
                     <div className="horizontal-padding pt-4">
-                        <div className="row header-body ">
+                        <div className="row header-body">
                             <div className="col-1 text-center">
                                 Id {sortHeroes.id ? <AiOutlineCaretDown onClick={() => sortHeroesById()} size={18} /> :
                                     <AiOutlineCaretUp onClick={() => sortHeroesById()} size={18} />
@@ -168,7 +169,10 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-        </div>
+            {
+                openModal && <DetailsModal currentHero={currentHero} onClose={() => setOpenModal(false)} visible={openModal} />
+            }
+        </div >
     );
 
 }

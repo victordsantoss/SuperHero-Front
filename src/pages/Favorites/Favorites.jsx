@@ -10,12 +10,12 @@ const Favorites = () => {
     if (favorites.length > 0) {
         return (
             <div className="pt-5">
-                <div className="row">
+                <div className="row p-0 m-0">
                     <h1>Your favorites characters</h1>
                     {
                         favorites.map((favorite, index) => {
                             return (
-                                <div className="col-md-3 col-12 card-list p-0 m-0" key={index}>
+                                <div className="col-12 col-sm-6 col-md-6 col-lg-3 card-list p-0 m-0" key={index}>
                                     <Card
                                         appearance={favorite.appearance}
                                         biography={favorite.biography}

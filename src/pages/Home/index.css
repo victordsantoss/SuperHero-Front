@@ -12,9 +12,7 @@
     height: 100%;
 }
 
-.horizontal-padding {
-    padding: 0px 30px
-}
+
 
 .header-home {
     width: 100%;
@@ -58,6 +56,15 @@
 .body-data {
     width: 100%;
     height: 100vh;
+}
+
+.scroll-sup {
+    width: 700px;
+}
+
+.scroll-intern{
+    width: 1080px;
+    overflow-x: scroll;
 }
 
 .line {
