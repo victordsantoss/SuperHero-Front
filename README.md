@@ -35,12 +35,21 @@ Esse projeto consiste no consumo da [SuperHero Api ](https://akabab.github.io/su
 
 
 ## 🏃 Executando
-
-> Para executar a aplicação **Web** e **Mobile**:
-    
-    yarn start
-
-
-> Para executar o **api**, utilize:
-
-    yarn dev
+> Usando Docker-Compose:
+``` shell
+docker-compose up
+```
+> Usando dockerfile:
+``` shell
+docker build -t super-hero-front ./  
+```
+``` shell
+docker run --name super-hero-front-container -p 3000:3000 super-hero-front
+```
+> Usando npm diretamente:
+``` shell
+npm install (lembrando de estar com o node v16.11)
+```
+``` shell
+npm start
+```
